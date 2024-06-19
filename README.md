@@ -39,7 +39,7 @@ print(string_to_ascii_codes(cipher))
 
 Now, there many ways to do this. Since the ASCII codes for the characters in our cipher text (A-Z and a-z) have inconvient values for modular arithmetic, I settled on mapping them to the values 0 - 51. From there, I could perform the ring-shift, then bring them back to the corresponding ASCII values. 
 
-![alt text](images\image-1.png)
+![ASSCI Chart](images/image-1.png)
 source: https://www.ascii-code.com/ASCII/compact
 
 ### A. Shift Down
