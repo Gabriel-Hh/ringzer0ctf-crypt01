@@ -9,7 +9,7 @@ The Challenge is simply the below cipher string with the only hint being it is c
 cipher = 'SYNTPrfneVfPbbyOhgAbgFrpher'
 ```
 
-Since this was the first challenge of this catagory, I assumed it wouldn't be too complicated and decided to test whether is was a simple ring cipher (AKA rot, caesar cipher). Spoiler... it is. A ring cipher takes plaintext and maps each character a certain number of letter 'down' the alphabet. If you reach the end of your alphabet mapping a character you continue from the start of the alphabet. Here is thought process and python code that led to unmasking the cipher text. 
+Since this was the first challenge of this catagory, I assumed it wouldn't be too complicated and decided to test whether is was a simple ring cipher (AKA rot, caesar cipher). Spoiler... it is. A ring cipher takes plain-text and maps each character a certain number of letters 'down' the alphabet. If you reach the end of your alphabet while mapping a character you continue from the start of the alphabet. Here is thought process and python code that led to unmasking the cipher text. 
 
 To test this hypothesis, I viewed the steps roughly as:
 
@@ -39,7 +39,7 @@ print(string_to_ascii_codes(cipher))
 
 Now, there many ways to do this. Since the ASCII codes for the characters in our cipher text (A-Z and a-z) have inconvient values for modular arithmetic, I settled on mapping them to the values 0 - 51. From there, I could perform the ring-shift, then bring them back to the corresponding ASCII values. 
 
-![alt text](image-1.png)
+![alt text](images\image-1.png)
 source: https://www.ascii-code.com/ASCII/compact
 
 ### A. Shift Down
@@ -195,7 +195,7 @@ print_all_ring_shifts(cipher)
 Shifting by 13 decrypts the cipher text revealing "flagcEsAriscooLbutNotSECurE"! Shifting by 39 also reveals the same message with inversed case.
 
 ## 5. Post-mortem
-Now, this theory could have been verified much faster, if I hadn't decided to write the code myself. Libraries already implement this cipher, many online tools have it as well, and simply by ignoring the case of the characters it can be writen much more consisely. I do believe that there is value, without constantly trying to reinvent the wheel, to implementing some things from scratch from time to time. I find it deepens understanding of the underlying algorithm and increases appreciation of others codes when we come across the inevitable better implementation.
+Now, this theory could have been verified much faster, if I hadn't decided to write the code myself. Libraries already implement this cipher, many online tools have it as well, and simply by ignoring the case of the characters it can be written much more consisely. I do believe that there is value, without constantly trying to reinvent the wheel, to implementing some things from scratch from time to time. I find it deepens understanding of the underlying algorithm and increases appreciation of others codes when we come across the inevitable better implementation.
 
 ## 6. Bonus
 
